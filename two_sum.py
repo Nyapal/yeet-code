@@ -1,18 +1,28 @@
-def two_sum(lis, target):
-  first = None
-  second = None 
+import math
 
-  for num in lis:
-    desired = target - num
+# math.exp( x )
+# class Solution:
 
-    if desired in lis:
-      second = lis.index(desired)
+def reverse(x):
+  string = str(x)
+  lis = list(string)
+  lis.reverse()
+  string2 = ''.join(lis)
+  whatever = int(string2)
 
-    if num + desired == target:
-      first = lis.index(num)
-      return [first, second]
-      
-  return 'None Found'
+  [−231,  231 − 1].
 
-answer = two_sum([2, 11, 15], 9)
-print(answer)
+  #reverse the string.. 
+  #if the string is not in range [−231,  231 − 1] return 0, 
+  #if the last digit is -, move it to the front 
+  
+  # if lis[0] == '-':
+  #   del lis[0]
+  #   string1 = ''.join(lis)
+  #   negative = '-' + string1
+  #   return int(negative)
+  # else: 
+  #   lis.reverse()
+  #   return ''.join(lis)
+
+print(reverse(-123))
