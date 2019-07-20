@@ -1,28 +1,24 @@
-import math
+# Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+# You may assume that each input would have exactly one solution, and you may not use the same element twice.
+# nums[0] + nums[1] = 2 + 7 = 9,
+# return [0, 1].
 
-# math.exp( x )
-# class Solution:
+def twoSum(nums, target): 
+  i = 0 
+  while i < len(nums):
+    f_index = nums.index(nums[i])
+    numWanted = target - nums[i]
+    if numWanted in nums:
+      s_index = nums.index(numWanted)
+      if f_index == s_index:
+        nums.pop(s_index)
+        numWanted = target - nums[i]
+        s_index = nums.index(numWanted) + 1
 
-def reverse(x):
-  string = str(x)
-  lis = list(string)
-  lis.reverse()
-  string2 = ''.join(lis)
-  whatever = int(string2)
+      if f_index != s_index:
+        return [f_index, s_index]
+    i += 1
 
-  [−231,  231 − 1].
-
-  #reverse the string.. 
-  #if the string is not in range [−231,  231 − 1] return 0, 
-  #if the last digit is -, move it to the front 
-  
-  # if lis[0] == '-':
-  #   del lis[0]
-  #   string1 = ''.join(lis)
-  #   negative = '-' + string1
-  #   return int(negative)
-  # else: 
-  #   lis.reverse()
-  #   return ''.join(lis)
-
-print(reverse(-123))
+hey = twoSum([3,2,4], 6)
+print(hey)
+        
